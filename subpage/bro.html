@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="./metro/metro-all.min.css" rel="stylesheet">
+    <script src="./metro/metro.min.js"></script>
+  </head>
+  <body>
+    <h1 class="text-center">On Construction Now</h1>
+    <h3 class="text-center">Using Metro 4</h3>
+    <div class="bg-grayBlue fg-white text-center">
+        Below is the test display.
+    </div>
+
+    <div class="img-container rounded">
+        <img src="./img/a.png">
+        <div class="image-overlay op-amber"></div>
+    </div>
+
+    <ul data-role="treeview" data-on-node-click="treeClick">
+        <li data-caption="Docs" data-collapsed="true">
+            <ul>
+                <li data-caption="Unity-docs"></li>
+                <li data-caption="B-docs"></li>
+                <li data-caption="C-docs"></li>
+            </ul>
+        </li>
+        <li data-caption="Media" data-collapsed="true">
+            <ul>
+                <li data-caption="Musics" data-collapsed="true">
+                    <ul>
+                        <!--#include file="treeMusics.html" -->
+                    </ul>
+                </li>
+                <li data-caption="Videos" data-collapsed="true">
+                    <ul>
+                        <!--#include file="treeVideos.html" -->
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <ul class="feed-list">
+        <li class="title remark secondary">This is a title</li>
+        <li>
+            <img class="avatar" src="https://picsum.photos/96/72/?random">
+            <span class="label">There were some sings of a calm at noon</span>
+            <span class="second-label">10 min</span>
+        </li>
+        <li>
+            <img class="avatar" src="https://picsum.photos/96/72/?random">
+            <span class="label">There were some sings of a calm at noon</span>
+            <span class="second-label">10 min</span>
+        </li>
+        <li class="title remark primary">This is a title</li>
+        <li>
+            <img class="avatar on-right" src="https://picsum.photos/96/72/?random">
+            <span class="label">There were some sings of a calm at noon</span>
+            <span class="second-label">10 min</span>
+        </li>
+    </ul>
+
+<script>
+    function treeClick(node, tree){
+        var name = node.getAttribute("path");
+        console.log(name);
+        if(name.search(".mp3") != -1){window.open('./mus.html?'+name, 'newwindow', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
+        if(name.search(".mp4") != -1){window.open('./vid.html?'+name, 'newwindow', 'height=500, width=800, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
+        if(name=="Unity-docs"){window.open('./doc/UnityEN/Manual/UnityManual.html', 'newwindow', 'height=700, width=1000');}
+    }
+</script>
+
+  </body>
+</html>

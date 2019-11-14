@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="M.css" />
+    <link rel="stylesheet" type="text/css" href="./plyr/plyr.css" />
+    <script src="./plyr/plyr.js"></script>
+  </head>
+  <body>
+        <div class="container">
+            <video src="./plyr/blank.mp4" id="player"></video>
+        </div>
+  </body>
+  <script>
+    const player = new Plyr('#player', { 
+      controls : ['play','progress','current-time','volume','settings','download','fullscreen'],
+      settings : ['captions', 'quality', 'speed', 'loop'],
+    });
+    var pl = document.getElementById('player');
+    var path = window.location.search.substr(1);
+    pl.src = path;
+  </script>
+</html>

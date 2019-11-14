@@ -1,0 +1,14 @@
+body,html {
+    height: 100%;
+    margin: 1px;
+    padding: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rajdhani', sans-serif;
+	background-color: rgb(80, 80, 80);
+}
+
+.container {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
