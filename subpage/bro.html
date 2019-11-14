@@ -64,11 +64,12 @@
 
 <script>
     function treeClick(node, tree){
-        var name = node.getAttribute("path");
+        var path = node.getAttribute("path");
+        var name = node.getAttribute("data-caption");
         console.log(name);
-        if(name.search(".mp3") != -1){window.open('./mus.html?'+name, 'newwindow', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
-        if(name.search(".mp4") != -1){window.open('./vid.html?'+name, 'newwindow', 'height=500, width=800, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
-        if(name=="Unity-docs"){window.open('./doc/UnityEN/Manual/UnityManual.html', 'newwindow', 'height=700, width=1000');}
+        if(path.search(".mp3") != -1){window.open('./mus.html?'+path, 'newwindow', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
+        else if(path.search(".mp4") != -1){window.open('./vid.html?'+path, 'newwindow', 'height=500, width=800, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
+        else if(name=="Unity-docs"){window.open(path, 'newwindow', 'height=700, width=1000');}
     }
 </script>
 
