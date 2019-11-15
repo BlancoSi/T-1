@@ -28,21 +28,25 @@
         </li>
         <li data-caption="Media" data-collapsed="true">
             <ul>
-                <li data-caption="Musics" data-collapsed="true">
+                <li data-caption="Music" data-collapsed="true">
                     <ul>
-                        <!--#include file="treeMusics.html" -->
+                        <!--#include file="treeMusic.html" -->
                     </ul>
                 </li>
-                <li data-caption="Videos" data-collapsed="true">
+                <li data-caption="Video" data-collapsed="true">
                     <ul>
-                        <!--#include file="treeVideos.html" -->
+                        <!--#include file="treeVideo.html" -->
                     </ul>
                 </li>
             </ul>
         </li>
         <li data-caption="Resource" data-collapsed="true">
             <ul>
-                <li data-caption="Neon Noir Ray Tracing Benchmark" path="./res/Neon_Noir_Ray_Tracing_Benchmark_2527.7z"></li>
+                <li data-caption="Software" data-collapsed="true">
+                    <ul>
+                        <!--#include file="treeResource.html" -->
+                    </ul>
+                </li>
             </ul>
         </li>
     </ul>
@@ -63,8 +67,8 @@
         console.log(name);
         if(path.search(".mp3") != -1 || path.search(".flac") != -1){window.open('./mus.html?'+path, 'newwindow', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
         else if(path.search(".mp4") != -1 || path.search(".mkv") != -1 || path.search(".rmvb") != -1){window.open('./vid.html?'+path, 'newwindow', 'height=500, width=800, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
+        else if(path.search(".7z") != -1 || path.search(".rar") != -1 || path.search(".zip") != -1){window.open(path);}
         else if(name=="Unity-docs"){window.open(path, 'newwindow', 'height=700, width=1000');}
-        else if(name=="Neon Noir Ray Tracing Benchmark"){window.open(path);}
     }
 </script>
 

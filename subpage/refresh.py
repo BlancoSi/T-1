@@ -1,14 +1,17 @@
 import os
 
 f = open('bro.html',mode='r',encoding='utf-8')
-Vf_plug = open('treeVideos.html',mode="r",encoding='utf-8')
-Mf_plug = open('treeMusics.html',mode="r",encoding='utf-8')
+Vf_plug = open('treeVideo.html',mode="r",encoding='utf-8')
+Mf_plug = open('treeMusic.html',mode="r",encoding='utf-8')
+Rf_plug = open('treeResource.html',mode="r",encoding='utf-8')
 f_new = open('output.html',mode="w+",encoding='utf-8')
 
 V_coutents = Vf_plug.read()
-V_path = '<!--#include file="treeVideos.html" -->'
+V_path = '<!--#include file="treeVideo.html" -->'
 M_coutents = Mf_plug.read()
-M_path = '<!--#include file="treeMusics.html" -->'
+M_path = '<!--#include file="treeMusic.html" -->'
+R_coutents = Rf_plug.read()
+R_path = '<!--#include file="treeResource.html" -->'
 
 for line in f:
     f_new.write(line)
@@ -19,5 +22,8 @@ for line in f:
     if M_path in line:
         print(M_path)
         f_new.write(M_coutents+"\n")
+    if R_path in line:
+        print(M_path)
+        f_new.write(R_coutents+"\n")
 
 os.system("pause")
