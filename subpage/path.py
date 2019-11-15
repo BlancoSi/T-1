@@ -22,15 +22,20 @@ def geneDir(fileDir):
             
         break
 
-fileDirVideos = "./vid/"
-fileDirMusics = "./mus/"
-fileNameHtmlVideos = "treeVideos.html"
-fileNameHtmlMusics = "treeMusics.html"
+fileDirVideo = "./vid/"
+fileDirMusic = "./mus/"
+fileDirResource = "./res/"
 
-with open(fileNameHtmlVideos,mode='w+',encoding='utf-8') as file_o:
-    geneDir(fileDirVideos)
-with open(fileNameHtmlMusics,mode='w+',encoding='utf-8') as file_o:
-    geneDir(fileDirMusics)
+fileNameHtmlVideo = "treeVideo.html"
+fileNameHtmlMusic = "treeMusic.html"
+fileNameHtmlResource = "treeResource.html"
+
+with open(fileNameHtmlVideo,mode='w+',encoding='utf-8') as file_o:
+    geneDir(fileDirVideo)
+with open(fileNameHtmlMusic,mode='w+',encoding='utf-8') as file_o:
+    geneDir(fileDirMusic)
+with open(fileNameHtmlResource,mode='w+',encoding='utf-8') as file_o:
+    geneDir(fileDirResource)
 
 os.system("pause")
 
