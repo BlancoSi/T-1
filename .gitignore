@@ -1,6 +1,8 @@
 /subpage/doc/*
 /subpage/vid/*
 /subpage/mus/*
+/subpage/res/*
+/subpage/news/*
 /subpage/treeMusics.html
 /subpage/treeVideos.html
 /subpage/output.html
