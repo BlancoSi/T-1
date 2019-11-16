@@ -9,7 +9,7 @@ def geneDir(fileDir):
     for root, dirs, files in os.walk(fileDir):
         for file in files:
             pos = os.path.join(root, file).replace('\\','/')
-            if file.find('.vtt') == -1:
+            if file.find('.vtt') == -1 & file.find('.ass') == -1:
                 geneFile(file,pos)
             
         for dir in dirs:
