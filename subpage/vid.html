@@ -9,7 +9,10 @@
   </head>
   <body>
         <div class="container">
-            <video src="./plyr/blank.mp4" id="player"></video>
+            <video id="player">
+              <source src="./plyr/blank.mp4" type="video/mp4" />
+              <track id="track" kind="captions" label="Chinese captions" src="" srclang="zh" default />
+            </video>
         </div>
   </body>
   <script>
@@ -20,5 +23,8 @@
     var pl = document.getElementById('player');
     var path = window.location.search.substr(1);
     pl.src = path;
+    var tr = document.getElementById('track');
+    var tr_path = path + ".vtt";
+    tr.src = tr_path;
   </script>
 </html>
