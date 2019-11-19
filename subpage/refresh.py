@@ -26,4 +26,4 @@ for line in f:
         print(M_path)
         f_new.write(R_coutents+"\n")
 
-os.system("pause")
+# os.system("pause")

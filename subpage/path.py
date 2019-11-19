@@ -38,5 +38,5 @@ with open(fileNameHtmlMusic,mode='w+',encoding='utf-8') as file_o:
 with open(fileNameHtmlResource,mode='w+',encoding='utf-8') as file_o:
     geneDir(fileDirResource)
 
-os.system("pause")
+# os.system("pause")
 
