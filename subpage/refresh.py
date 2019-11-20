@@ -4,7 +4,7 @@ f = open('bro.html',mode='r',encoding='utf-8')
 Vf_plug = open('treeVideo.html',mode="r",encoding='utf-8')
 Mf_plug = open('treeMusic.html',mode="r",encoding='utf-8')
 Rf_plug = open('treeResource.html',mode="r",encoding='utf-8')
-f_new = open('output.html',mode="w+",encoding='utf-8')
+f_new = open('index.html',mode="w+",encoding='utf-8')
 
 V_coutents = Vf_plug.read()
 V_path = '<!--#include file="treeVideo.html" -->'
