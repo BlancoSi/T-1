@@ -45,6 +45,11 @@
                 <!--#include file="treeResource.html" -->
             </ul>
         </li>
+        <li data-caption="Posts" data-collapsed="true">
+            <ul>
+                    <!--#include file="treePosts.html" -->
+            </ul>
+        </li>
     </ul>
 
     <ul class="feed-list">
@@ -63,9 +68,10 @@
         console.log(name);
         if(path.search(".mp3") != -1 || path.search(".flac") != -1){window.open('./mus.html?'+path, 'newwindow', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
         else if(path.search(".mp4") != -1 || path.search(".mkv") != -1 || path.search(".rmvb") != -1 || path.search(".webm") != -1){window.open('./vid.html?'+path, 'newwindow', 'height=500, width=800, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
-        else if(path.search(".7z") != -1 || path.search(".rar") != -1 || path.search(".zip") != -1){window.open(path);}
+        else if(path.search(".md") != -1){window.open('./pos.html?'+path, 'newwindow', 'height=700, width=1000');}
         else if(name=="Unity-docs"){window.open(path, 'newwindow', 'height=700, width=1000');}
         else if(name=="CryEngine-docs"){window.open(path, 'newwindow', 'height=700, width=1000');}
+        else {window.open(path, 'newwindow');}
     }
 </script>
 

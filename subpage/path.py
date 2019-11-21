@@ -26,10 +26,12 @@ def geneDir(fileDir):
 fileDirVideo = "./vid/"
 fileDirMusic = "./mus/"
 fileDirResource = "./res/"
+fileDirPosts = "./posts/"
 
 fileNameHtmlVideo = "treeVideo.html"
 fileNameHtmlMusic = "treeMusic.html"
 fileNameHtmlResource = "treeResource.html"
+fileNameHtmlPosts = "treePosts.html"
 
 with open(fileNameHtmlVideo,mode='w+',encoding='utf-8') as file_o:
     geneDir(fileDirVideo)
@@ -37,6 +39,8 @@ with open(fileNameHtmlMusic,mode='w+',encoding='utf-8') as file_o:
     geneDir(fileDirMusic)
 with open(fileNameHtmlResource,mode='w+',encoding='utf-8') as file_o:
     geneDir(fileDirResource)
+with open(fileNameHtmlPosts,mode='w+',encoding='utf-8') as file_o:
+    geneDir(fileDirPosts)
 
 # os.system("pause")
 
