@@ -1,6 +1,6 @@
 {
     "man":"creatTable('>>>>>>>>>>>>CMDs>>>>>>>>>>>>>');creatTable('>Hello: Jump to %Mystery%.');creatTable('>sudo su: Login as root.');creatTable('>su guest: Login as guest.');creatTable('>bgp: Change the background picture.');creatTable('>xdmy: Change the background picture.');creatTable('>>>>>>>>>>>>CMDs>>>>>>>>>>>>>');",
-    "Hello":"window.open(\"./subpage/output.html\");creatTable('>Connecting...');creatTable('>Connection finish')",
+    "Hello":"window.open(\"./subpage/index.html\");creatTable('>Connecting...');creatTable('>Connected')",
     "sudo_halt":"window.opener=null;window.close();",
     "bgp":"document.getElementsByClassName('background')[0].style.backgroundImage='url(bgp.png)';document.getElementsByClassName('background')[1].style.backgroundImage='url(bgp.png)';",
     "xdmy":"document.getElementsByClassName('background')[0].style.backgroundImage='url(xdmy.png)';document.getElementsByClassName('background')[1].style.backgroundImage='url(xdmy.png)';",
