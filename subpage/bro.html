@@ -21,9 +21,9 @@
     <ul data-role="treeview" data-on-node-click="treeClick">
         <li data-caption="Docs" data-collapsed="true">
             <ul>
-                <li data-caption="Unity-docs" path="./doc/UnityEN/Manual/UnityManual.html"></li>
-                <li data-caption="CryEngine-docs" path="https://docs.cryengine.com/display/CEMANUAL/CRYENGINE+V+Manual"></li>
-                <li data-caption="C-docs"></li>
+                <li data-caption="Unity-docs-local" path="./doc/UnityEN/Manual/UnityManual.html"></li>
+                <li data-caption="CryEngine-docs-link" path="https://docs.cryengine.com/display/CEMANUAL/CRYENGINE+V+Manual"></li>
+                <li data-caption="UnrealEngine-docs-link" path="https://docs.unrealengine.com/zh-CN/index.html"></li>
             </ul>
         </li>
         <li data-caption="Media" data-collapsed="true">
@@ -69,8 +69,7 @@
         if(path.search(".mp3") != -1 || path.search(".flac") != -1){window.open('./mus.html?'+path, 'newwindow', 'height=100, width=400, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
         else if(path.search(".mp4") != -1 || path.search(".mkv") != -1 || path.search(".rmvb") != -1 || path.search(".webm") != -1){window.open('./vid.html?'+path, 'newwindow', 'height=500, width=800, top=0,left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no');}
         else if(path.search(".md") != -1){window.open('./pos.html?'+path, 'newwindow', 'height=700, width=1000');}
-        else if(name=="Unity-docs"){window.open(path, 'newwindow', 'height=700, width=1000');}
-        else if(name=="CryEngine-docs"){window.open(path, 'newwindow', 'height=700, width=1000');}
+        else if(name.search("-docs") != -1){window.open(path, 'newwindow', 'height=700, width=1000');}
         else {window.open(path, 'newwindow');}
     }
 </script>
