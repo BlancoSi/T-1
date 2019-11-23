@@ -33,7 +33,7 @@ body {
 .glass {
   height: 100%;
   width: 100%;
-   background-image: url('bgp.png');
+  background-image: url('bgp.png');
   background-size: cover;
   background-position: center;
   clip-path: inset(10em);
@@ -98,6 +98,11 @@ body {
     z-index: 2;
     /*filter: blur(1px);*/
   }
+
+#bar {
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+}
 
 @media (max-width: 980px) {
   body, html {
