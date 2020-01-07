@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
         <title>My T</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/5.0.4/dist/converse.min.css">
+        <script src="https://cdn.conversejs.org/5.0.4/dist/converse.min.js" charset="utf-8"></script>
         <link href="./subpage/metro/metro-all.min.css" rel="stylesheet">
         <script src="./subpage/metro/metro.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css1.css" />
@@ -47,6 +49,14 @@
       </div>
 
       <script type="text/javascript" src="js1.js"></script>
+
+    <script>
+        converse.initialize({
+            bosh_service_url: 'https://conversejs.org/http-bind/',
+            show_controlbox_by_default: false,
+            view_mode: 'overlayed'
+        });
+    </script>
 
     </body>
 
