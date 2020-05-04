@@ -1,6 +1,9 @@
-var msg = 'Hello'
+var msg = ''
 var cmds = null
 var user = 'guest'
+
+var usedcmds = new Array()
+var cmdnum = 0
 
 window.onload = function () {
     var url = "cmds.json"
@@ -13,28 +16,51 @@ window.onload = function () {
             // console.log(cmds);
         }
     }
+    this.cmdnum = this.usedcmds.push('Hello') - 1
+    this.msg = this.usedcmds[this.cmdnum]
+    document.getElementById("add").innerHTML = msg
 }
-
 
 window.addEventListener('keydown', (event)=> {
     // console.log(event)
     if (event.key === 'Backspace') {
         msg = msg.substr(0, msg.length - 1)
+        document.getElementById("add").innerHTML = msg
+        return
     } else if (msg.length <= 10 && (event.key === ' ' || /^\w{0,1}$/.test(event.key))) {
+        if (msg !== ''){
+            cmdnum = usedcmds.length - 1
+        }
         msg += event.key
-    }
-    document.getElementById("add").innerHTML = msg
-}, false)
-
-window.addEventListener('keydown', (event)=> {
-    if (event.key === 'Enter') {
+        document.getElementById("add").innerHTML = msg
+        usedcmds[cmdnum] = msg
+        return
+    } else if (event.key === 'Enter' && msg !== '') {
         enter(msg)
         while(msg.length > 0){
             msg = msg.substr(0, msg.length - 1)
             document.getElementById("add").innerHTML = msg
         }
-        //msg = ''
+        cmdnum = usedcmds.push(msg) - 1
+        return
+    } else if (event.key === 'ArrowUp') {
+        if (cmdnum > 0){
+            cmdnum -= 1
+            document.getElementById("add").innerHTML = usedcmds[cmdnum]
+            msg = usedcmds[cmdnum]
+        } 
+    } else if (event.key === 'ArrowDown') {
+        if (cmdnum < usedcmds.length - 1){
+            cmdnum += 1
+            document.getElementById("add").innerHTML = usedcmds[cmdnum]
+            msg = usedcmds[cmdnum]
+        } 
     }
+    
+}, false)
+
+window.addEventListener('keydown', (event)=> {
+
 }, false)
 
 document.oncontextmenu = () => { return false }
@@ -59,6 +85,10 @@ function creatTable (msg) {
 
 function cmd (msg) {
     msg = msg.replace( /\s+/g ,"_")
+    if (!isNaN(msg)) {
+        //msg为数字
+        return
+    }
     msg = "cmds." + msg
      console.log(msg)
     var cmd = eval(msg)
