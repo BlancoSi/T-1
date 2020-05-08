@@ -6,12 +6,16 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
     <title>My T</title>
+    <!--
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/5.0.4/dist/converse.min.css">
     <script src="https://cdn.conversejs.org/5.0.4/dist/converse.min.js" charset="utf-8"></script>
+    -->
     <link href="./subpage/metro/css/metro-all.min.css" rel="stylesheet">
     <script src="./subpage/metro/js/metro.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css1.css" />
     <link rel="stylesheet" type="text/css" href="css2.css" />
+    <script type="text/javascript" src="js1.js"></script>
+    <script type="text/javascript" src="js2.js"></script>
 
     <style>
         .login-form {
@@ -28,26 +32,32 @@
 </head>
 
 <body class="background">
-
-    <form class="login-form bg-white p-6 mx-auto border bd-default win-shadow" data-role="validator" action="login()"
+    <!--
+    <button class="button" onclick="Login('user@example.com','123456')">Login</button>
+    <button class="button" onclick="UserAction()">UserAction</button>
+    <button class="button" onclick="RecreateTable()">RecreateTable</button>
+    -->
+    <!-- js2 -->
+    <form class="login-form bg-white p-6 mx-auto border bd-default win-shadow" data-role="validator"
         data-clear-invalid="2000" data-on-error-form="invalidForm" data-on-validate-form="validateForm">
         <span class="mif-vpn-lock mif-4x place-right" style="margin-top: -10px;"></span>
         <h2 class="text-light">Login to service</h2>
         <hr class="thin mt-4 mb-4 bg-white">
         <div class="form-group">
-            <input type="text" data-role="input" data-prepend="<span class='mif-envelop'>"
+            <input id="email" type="text" data-role="input" data-prepend="<span class='mif-envelop'>"
                 placeholder="Enter your email..." data-validate="required email">
         </div>
         <div class="form-group">
-            <input type="password" data-role="input" data-prepend="<span class='mif-key'>"
+            <input id="password" type="password" data-role="input" data-prepend="<span class='mif-key'>"
                 placeholder="Enter your password..." data-validate="required minlength=6">
         </div>
         <div class="form-group mt-10">
-            <input type="checkbox" data-role="checkbox" data-caption="Remember me" class="place-right">
-            <button class="button bg-cyan bg-lightGreen-hover bg-darkRed-active fg-white">Login</button>
+            <input id="checkbox" type="checkbox" data-role="checkbox" data-caption="Remember me" class="place-right">
+            <button class="button bg-cyan bg-lightGreen-hover bg-darkRed-active fg-white"
+                onclick="Login(document.getElementById('email').value,document.getElementById('password').value)">Login</button>
         </div>
     </form>
-
+    <!-- js2 --><!-- 改成由php返回此form，点击login后写入cookie，然后刷新页面，页面加载后读取cookie -->
     <div id="bar" data-role="appbar" data-expand-point="fs">
         <ul class="app-bar-menu">
             <li><a href="javascript:;" onclick="$('.login-form').toggle()">Login</a></li>
@@ -86,30 +96,15 @@
 
     </div>
 
-    <script type="text/javascript" src="js1.js"></script>
-
     <script>
+        /*
         converse.initialize({
             bosh_service_url: 'http://127.0.0.1:7070/http-bind/',
             show_controlbox_by_default: false,
             view_mode: 'overlayed',
             default_domain: 'desktop-1qgqkli'
         });
-        function invalidForm() {
-            var form = $(".login-form .button");
-            form.addClass("ani-ring");
-            setTimeout(function () {
-                form.removeClass("ani-ring");
-            }, 1000);
-        }
-        function validateForm() {
-            $(".login-form").animate({
-                opacity: 0
-            });
-        }
-        function login() {
-            
-        }
+        */
         $('.login-form').toggle()
     </script>
 
