@@ -70,6 +70,7 @@
          }
       }
       function VerifyAccount($email, $password){
+         if ($email == ''){return false;}
          $sql =<<<EOF
          SELECT * from USER WHERE EMAIL = '$email';
          EOF;
