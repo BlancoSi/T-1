@@ -1,4 +1,18 @@
-//Login,SignUp,UserAction & FormValidate & Cookie
+//Form & Login,SignUp,UserAction & FormValidate & Cookie
+
+function Form() {
+    $.get('./php/form.php').then(
+        function (response) {
+            var div = $(response);
+            div.appendTo($("body"));
+            //$("form").remove();
+            //console.log(response);
+        },
+        function (xhr) {
+            console.log(xhr.status, xhr.statusText);
+        }
+    )
+}
 
 function Login(email, password) {
     $.post("./php/process.php", {

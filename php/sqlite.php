@@ -23,6 +23,8 @@
          $insertData =<<<EOF
          INSERT INTO USER (ID,EMAIL,PASSWORD)
          VALUES (1, 'user@example.com', '123456');
+         INSERT INTO USER (ID,EMAIL,PASSWORD)
+         VALUES (2, '123', '123');
          EOF;
          $this->ExecStr($insertData,"Insert succeed");
          // select
