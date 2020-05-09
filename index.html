@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
     <title>My T</title>
-    <!--
+    <!-- converse.js
     <link rel="stylesheet" type="text/css" media="screen" href="https://cdn.conversejs.org/5.0.4/dist/converse.min.css">
     <script src="https://cdn.conversejs.org/5.0.4/dist/converse.min.js" charset="utf-8"></script>
     -->
@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="css2.css" />
     <script type="text/javascript" src="js1.js"></script>
     <script type="text/javascript" src="js2.js"></script>
-
+    <script type="text/javascript" src="windowonload.js"></script>
 </head>
 
 <body class="background">
@@ -28,9 +28,31 @@
     <!-- js2 -->
     <!-- <form> -->
     <!-- js2 -->
-    <!-- 改成由php返回此form，点击login后写入cookie，刷新页面，TODO:页面加载后读取cookie -->
-    <div id="bar" data-role="appbar" data-expand-point="fs">
+    <!-- 由php返回form，login后token写入cookie，刷新页面，TODO:页面加载后读取cookie -->
+
+    <aside id="sidebar" class="sidebar pos-absolute z-2" data-role="sidebar" data-toggle="#sidebar-toggle">
+        <div class="sidebar-header bg-lightGray">
+            <a href="/" class="fg-blue sub-action" onclick="Metro.sidebar.close('#sidebar'); return false;">
+                <span class="mif-arrow-left mif-2x"></span>
+            </a>
+            <div class="avatar">
+                <img data-role="gravatar" data-email="sergey@pimenov.com.ua">
+            </div>
+            <span class="title fg-black">Metro 4 Components Library</span>
+            <span class="subtitle fg-black"> 2018 © Sergey Pimenov</span>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a><span class="mif-home icon"></span>Home</a></li>
+            <li><a><span class="mif-books icon"></span>Guide</a></li>
+            <li><a><span class="mif-files-empty icon"></span>Examples</a></li>
+            <li class="divider"></li>
+            <li><a><span class="mif-images icon"></span>Icons</a></li>
+        </ul>
+    </aside>
+
+    <div id="bar" class="app-bar z-1" data-role="appbar" data-expand-point="fs">
         <ul class="app-bar-menu">
+            <li><a href="javascript:;" id="sidebar-toggle">Menu</a></li>
             <li><a href="javascript:;" onclick="Form()">Login</a></li>
             <li><a href="">Home</a></li>
             <li><a href="./subpage/index.html">Subpage</a></li>
@@ -66,18 +88,6 @@
         </div>
 
     </div>
-
-    <script>
-        /*
-        converse.initialize({
-            bosh_service_url: 'http://127.0.0.1:7070/http-bind/',
-            show_controlbox_by_default: false,
-            view_mode: 'overlayed',
-            default_domain: 'desktop-1qgqkli'
-        });
-        */
-        //$('.login-form').toggle()
-    </script>
 
 </body>
 

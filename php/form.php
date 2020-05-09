@@ -1,5 +1,6 @@
 <?php
 echo<<<EOF
+<div id="login-div" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
 <form class="login-form bg-white p-6 mx-auto border bd-default win-shadow" data-role="validator"
 data-on-submit="Login(document.getElementById('email').value,document.getElementById('password').value)"
 style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;width:350px;height:auto;top:50%;"
@@ -18,8 +19,10 @@ data-clear-invalid="2000" data-on-error-form="invalidForm" data-on-validate-form
 <div class="form-group mt-10">
     <input id="checkbox" type="checkbox" data-role="checkbox" data-caption="Remember me" class="place-right">
     <button class="button bg-cyan bg-lightGreen-hover bg-darkRed-active fg-white">Login</button>
-    <input type="button" class="button" value="Cancel">
+    <input type="button" class="button" value="Cancel"
+        onclick="document.getElementById('login-div').remove();enableInput(true);">
 </div>
 </form>
+</div>
 EOF;
 ?>

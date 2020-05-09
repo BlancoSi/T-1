@@ -2,10 +2,15 @@ var msg = ''
 var cmds = null
 var user = 'guest'
 
+var enableinput = true
 var usedcmds = new Array()
 var cmdnum = 0
 
-window.onload = function () {
+function enableInput(boolInput){
+    enableinput = boolInput
+}
+
+function initHello () {
     var url = "cmds.json"
     var request = new XMLHttpRequest();
     request.open("get", url);
@@ -22,6 +27,7 @@ window.onload = function () {
 }
 
 window.addEventListener('keydown', (event)=> {
+    if (enableinput == false){return false}
     // console.log(event)
     if (event.key === 'Backspace') {
         msg = msg.substr(0, msg.length - 1)
@@ -57,10 +63,6 @@ window.addEventListener('keydown', (event)=> {
         } 
     }
     
-}, false)
-
-window.addEventListener('keydown', (event)=> {
-
 }, false)
 
 document.oncontextmenu = () => { return false }

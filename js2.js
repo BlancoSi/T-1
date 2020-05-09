@@ -1,6 +1,15 @@
 //Form & Login,SignUp,UserAction & FormValidate & Cookie
 
+function AutoLogin(){
+    if (GetCookie('mytoken') != ""){
+
+    }else{
+        //alert('???')
+    }
+}
+
 function Form() {
+    if (document.getElementById("login-div")){return false}
     $.get('./php/form.php').then(
         function (response) {
             var div = $(response);
@@ -12,6 +21,7 @@ function Form() {
             console.log(xhr.status, xhr.statusText);
         }
     )
+    enableInput(false)
 }
 
 function Login(email, password) {
