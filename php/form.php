@@ -1,7 +1,7 @@
 <?php
 echo<<<EOF
 <div id="login-div" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
-<form class="login-form bg-white p-6 mx-auto border bd-default win-shadow" data-role="validator"
+<form class="login-form bg-white p-6 mx-auto border bd-default win-shadow" data-role="validator" action="javascript:;"
 data-on-submit="Login(document.getElementById('email').value,document.getElementById('password').value)"
 style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10;width:350px;height:auto;top:50%;"
 data-clear-invalid="2000" data-on-error-form="invalidForm" data-on-validate-form="validateForm">

@@ -28,7 +28,7 @@
     <!-- js2 -->
     <!-- <form> -->
     <!-- js2 -->
-    <!-- 由php返回form，login后token写入cookie，刷新页面，TODO:页面加载后读取cookie -->
+    <!-- 由php返回form，login后token写入cookie，刷新页面，页面加载后读取cookie -->
 
     <aside id="sidebar" class="sidebar pos-absolute z-2" data-role="sidebar" data-toggle="#sidebar-toggle">
         <div class="sidebar-header bg-lightGray">
@@ -52,8 +52,11 @@
 
     <div id="bar" class="app-bar z-1" data-role="appbar" data-expand-point="fs">
         <ul class="app-bar-menu">
+            <li id="login-menu"></li>
+            <!--
             <li><a href="javascript:;" id="sidebar-toggle">Menu</a></li>
             <li><a href="javascript:;" onclick="Form()">Login</a></li>
+            -->
             <li><a href="">Home</a></li>
             <li><a href="./subpage/index.html">Subpage</a></li>
             <li>

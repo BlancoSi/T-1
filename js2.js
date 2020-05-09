@@ -1,15 +1,18 @@
 //Form & Login,SignUp,UserAction & FormValidate & Cookie
 
-function AutoLogin(){
-    if (GetCookie('mytoken') != ""){
-
-    }else{
+function AutoLogin() {
+    if (GetCookie('mytoken') != "") {
+        var div = $('<a href="javascript:;" id="sidebar-toggle">Menu</a>');
+        div.appendTo($("#login-menu"));
+    } else {
         //alert('???')
+        var div = $('<a href="javascript:;" onclick="Form()">Login</a>');
+        div.appendTo($("#login-menu"));
     }
 }
 
 function Form() {
-    if (document.getElementById("login-div")){return false}
+    if (document.getElementById("login-div")) { return false }
     $.get('./php/form.php').then(
         function (response) {
             var div = $(response);
@@ -30,8 +33,14 @@ function Login(email, password) {
         email: email,
         password: password
     }).then(
-        function (response) { console.log(response); SetCookie('mytoken',response); },
-        function (xhr) { console.log(xhr.status, xhr.statusText); }
+        function (response) {
+            console.log(response);
+            if (response != "Login Failed!") {
+                SetCookie('mytoken', response);
+                window.location.href = 'index.html';
+            }
+        },
+        function (xhr) { console.log(xhr.status, xhr.statusText); alert('Login Error!'); }
     )
 }
 
